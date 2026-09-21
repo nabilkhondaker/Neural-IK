@@ -6,7 +6,7 @@ A research-oriented implementation of learned inverse kinematics for a 2R planar
 robotic manipulator, with direct comparisons against analytical and numerical
 solvers.
 
-📢 Release Notice: This repository contains the complete codebase for this project, engineered between June 24, 2026 and September 21, 2026. The files have been uploaded in their entirety to officially publish the project for public viewing and use.
+📢 **Release Notice:** This repository contains the complete codebase for this project, engineered between *June 24, 2026* and *September 21, 2026*. The files have been uploaded in their entirety to officially publish the project for public viewing and use.
 
 ```
 Target Position
