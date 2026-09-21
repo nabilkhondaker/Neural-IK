@@ -1,0 +1,98 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "neural-ik"
+version = "0.1.0"
+description = "Neural Inverse Kinematics Lab: research-grade comparison of neural, analytical, and numerical IK for planar manipulators"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+authors = [
+    { name = "Nabil Khondaker" }
+]
+keywords = [
+    "robotics",
+    "inverse-kinematics",
+    "neural-networks",
+    "machine-learning",
+    "manipulator",
+    "scientific-computing",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.11",
+    "torch>=2.0",
+    "pandas>=2.0",
+    "matplotlib>=3.7",
+    "scikit-learn>=1.3",
+    "pyyaml>=6.0",
+    "tqdm>=4.65",
+    "click>=8.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "ruff>=0.1",
+    "mypy>=1.5",
+    "pre-commit>=3.4",
+]
+viz = [
+    "seaborn>=0.13",
+]
+notebook = [
+    "jupyter>=1.0",
+    "ipywidgets>=8.0",
+]
+
+[project.scripts]
+neural-ik = "neural_ik.cli.main:cli"
+
+[project.urls]
+Homepage = "https://github.com/nabilkhondaker/neural-ik-lab"
+Documentation = "https://github.com/nabilkhondaker/neural-ik-lab#readme"
+Repository = "https://github.com/nabilkhondaker/neural-ik-lab"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+neural_ik = ["py.typed"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP", "B", "C4", "SIM"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+strict_optional = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-v --tb=short"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
