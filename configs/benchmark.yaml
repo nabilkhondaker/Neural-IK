@@ -1,0 +1,17 @@
+robot:
+  type: planar_2r
+  link_1: 1.0
+  link_2: 0.75
+
+dataset:
+  samples: 50000
+
+model:
+  hidden_dims: [128, 128, 64]
+
+training:
+  epochs: 50
+  batch_size: 256
+
+reproducibility:
+  seed: 42
