@@ -1,0 +1,21 @@
+# Lightweight config for local development and CI
+robot:
+  type: planar_2r
+  link_1: 1.0
+  link_2: 0.75
+
+dataset:
+  samples: 5000
+  noise_std: 0.0
+
+model:
+  hidden_dims: [64, 64]
+  activation: relu
+
+training:
+  epochs: 10
+  batch_size: 128
+  learning_rate: 0.001
+
+reproducibility:
+  seed: 42

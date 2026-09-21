@@ -1,0 +1,13 @@
+robot:
+  type: planar_2r
+  link_1: 1.0
+  link_2: 0.75
+
+numerical:
+  method: damped_least_squares
+  max_iters: 100
+  tol: 1.0e-6
+  lambda: 0.1
+
+reproducibility:
+  seed: 42
